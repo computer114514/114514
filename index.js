@@ -15,39 +15,7 @@ let finalnum = 0
 const genhaonum = 0
 //全局变量用于输入根号后的数字
 
-// 基础版：根据数字长度调整字体大小（类似Windows计算器）
-function adjustFontSize() {
-  // 获取当前显示的文本
-  const text = numberButtom.textContent;
-  // 获取文本长度
-  const length = text.length;
-  
-  // 根据文本长度设置不同的字体大小
-  let fontSize = 50; // 默认字体大小
-  
-  // 简单的字体大小调整逻辑
-  if (length > 15) {
-    fontSize = 20; // 很长的数字使用最小字体
-  } else if (length > 12) {
-    fontSize = 25; // 较长的数字
-  } else if (length > 10) {
-    fontSize = 30; // 中等长度
-  } else if (length > 8) {
-    fontSize = 35; // 稍长
-  } else if (length > 6) {
-    fontSize = 40; // 略长
-  }
-  
-  // 应用字体大小
-  numberButtom.style.fontSize = fontSize + 'px';
-}
 
-// 创建一个简单的更新函数，用于在更新数字后调整字体大小
-function updateDisplay(value) {
-  numberButtom.textContent = value;
-  // 更新后立即调整字体大小
-  adjustFontSize();
-}
 // 这个是输入数字模块（已完成
 const key = document.querySelector('.key')
 //获取键盘
@@ -243,5 +211,6 @@ equal.addEventListener('click', function () {
     updateDisplay(Number(topvalue) % Number(numberButtom.textContent))
   }
 })
+
 
 
